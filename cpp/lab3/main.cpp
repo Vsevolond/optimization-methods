@@ -37,53 +37,61 @@ std::tuple<double, double> make_point(double x1, double x2) {
     return std::make_tuple(x1, x2);
 }
 
-
 std::tuple<double, double> exploratory_search(
     std::tuple<double, double> x_base,
     double (*func)(std::tuple<double, double>),
     double delta,
     std::vector<std::tuple<double, double, bool>>& probes
 ) {
-    double x1 = get_x1(x_base);
-    double x2 = get_x2(x_base);
-    double f_base = func(x_base);
-    
-    std::tuple<double, double> x_new = x_base;
-    double f_new = f_base;
-    
-    auto x_test = make_point(x1 + delta, x2);
-    double f_test = func(x_test);
-    probes.push_back(std::make_tuple(x1 + delta, x2, f_test < f_base));
-    if (f_test < f_new) {
-        x_new = x_test;
-        f_new = f_test;
+    std::tuple<double, double> x_current = x_base;
+
+    {
+        double x1 = get_x1(x_current);
+        double x2 = get_x2(x_current);
+        double f_current = func(x_current);
+
+        auto x_test = make_point(x1 + delta, x2);
+        double f_test = func(x_test);
+        probes.push_back(std::make_tuple(x1 + delta, x2, f_test < f_current));
+
+        if (f_test < f_current) {
+            x_current = x_test;
+            
+        } else {
+            x_test = make_point(x1 - delta, x2);
+            f_test = func(x_test);
+            probes.push_back(std::make_tuple(x1 - delta, x2, f_test < f_current));
+
+            if (f_test < f_current) {
+                x_current = x_test;
+            }
+        }
     }
-    
-    x_test = make_point(x1 - delta, x2);
-    f_test = func(x_test);
-    probes.push_back(std::make_tuple(x1 - delta, x2, f_test < f_base));
-    if (f_test < f_new) {
-        x_new = x_test;
-        f_new = f_test;
+
+    {
+        double x1 = get_x1(x_current);
+        double x2 = get_x2(x_current);
+        double f_current = func(x_current);
+
+        auto x_test = make_point(x1, x2 + delta);
+        double f_test = func(x_test);
+        probes.push_back(std::make_tuple(x1, x2 + delta, f_test < f_current));
+
+        if (f_test < f_current) {
+            x_current = x_test;
+            
+        } else {
+            x_test = make_point(x1, x2 - delta);
+            f_test = func(x_test);
+            probes.push_back(std::make_tuple(x1, x2 - delta, f_test < f_current));
+
+            if (f_test < f_current) {
+                x_current = x_test;
+            }
+        }
     }
-    
-    x_test = make_point(x1, x2 + delta);
-    f_test = func(x_test);
-    probes.push_back(std::make_tuple(x1, x2 + delta, f_test < f_base));
-    if (f_test < f_new) {
-        x_new = x_test;
-        f_new = f_test;
-    }
-    
-    x_test = make_point(x1, x2 - delta);
-    f_test = func(x_test);
-    probes.push_back(std::make_tuple(x1, x2 - delta, f_test < f_base));
-    if (f_test < f_new) {
-        x_new = x_test;
-        f_new = f_test;
-    }
-    
-    return x_new;
+
+    return x_current;
 }
 
 
@@ -132,11 +140,14 @@ HookeJeevesResult hooke_jeeves(
             if (f_pattern < f_new) {
                 x_base = x_pattern_result;
                 f_base = f_pattern;
+                
             } else {
                 x_base = x_new;
                 f_base = f_new;
             }
+            
             result.trajectory.push_back(x_base);
+            
         } else {
             delta /= alpha;
         }
@@ -147,6 +158,7 @@ HookeJeevesResult hooke_jeeves(
     result.optimum = x_base;
     result.f_opt = f_base;
     result.iterations = iter;
+    
     return result;
 }
 
@@ -196,15 +208,19 @@ HookeJeevesResult hooke_jeeves_optimized(
                     x_current = x_pattern_result;
                     f_current = f_pattern;
                     result.trajectory.push_back(x_current);
+                    
                 } else {
                     x_base = x_current;
                     f_base = f_current;
+                    
                     break;
                 }
             }
+            
         } else {
             delta /= alpha;
         }
+        
         iter++;
         if (iter > 1000) break;
     }
@@ -212,6 +228,7 @@ HookeJeevesResult hooke_jeeves_optimized(
     result.optimum = x_base;
     result.f_opt = f_base;
     result.iterations = iter;
+    
     return result;
 }
 
@@ -230,6 +247,7 @@ void visualize_method(
         for (int j = 0; j < n; ++j) {
             double x = x_min + (x_max - x_min) * i / (n - 1);
             double y = y_min + (y_max - y_min) * j / (n - 1);
+            
             x_grid.push_back(x);
             y_grid.push_back(y);
             z_grid.push_back(func(make_point(x, y)));
@@ -253,6 +271,7 @@ void visualize_method(
             if (decreases) {
                 blue_x.push_back(px);
                 blue_y.push_back(py);
+                
             } else {
                 red_x.push_back(px);
                 red_y.push_back(py);
@@ -327,6 +346,7 @@ void visualize_comparison(
         for (int j = 0; j < n; ++j) {
             double x = x_min + (x_max - x_min) * i / (n - 1);
             double y = y_min + (y_max - y_min) * j / (n - 1);
+            
             x_grid.push_back(x);
             y_grid.push_back(y);
             z_grid.push_back(func(make_point(x, y)));
@@ -376,7 +396,9 @@ void visualize_comparison(
     plot2d_basic.ylabel("x2");
     plot2d_basic.drawCurve(tx1, ty1).lineColor("green").lineWidth(2);
     plot2d_basic.drawPoints(tx1, ty1).lineColor("green").pointType(7).pointSize(2).label("relaxation");
+    
     if (!bx1.empty()) plot2d_basic.drawPoints(bx1, by1).lineColor("blue").pointType(1).pointSize(1).label("dec");
+    
     if (!rx1.empty()) plot2d_basic.drawPoints(rx1, ry1).lineColor("red").pointType(1).pointSize(1).label("inc");
     
     Plot3D plot3d_opt;
@@ -418,14 +440,14 @@ void run_test(
     auto result_basic = hooke_jeeves(x0, func, 0.5, 1e-6);
     auto result_optimized = hooke_jeeves_optimized(x0, func, 0.5, 1e-6);
     
-    std::cout << "\n--- Базовый метод (один поиск по образцу) ---" << std::endl;
+    std::cout << "\n--- Базовый метод (одинарный поиск) ---" << std::endl;
     std::cout << "Итераций: " << result_basic.iterations << std::endl;
     std::cout << "Найденный минимум: (" << std::fixed << std::setprecision(6) << get_x1(result_basic.optimum)
               << ", " << get_x2(result_basic.optimum) << ")" << std::endl;
     std::cout << "Значение функции: " << result_basic.f_opt << std::endl;
     std::cout << "Точек в траектории: " << result_basic.trajectory.size() << std::endl;
     
-    std::cout << "\n--- Оптимизированный метод (повторяющийся поиск по образцу) ---" << std::endl;
+    std::cout << "\n--- Оптимизированный метод (повторяющийся поиск) ---" << std::endl;
     std::cout << "Итераций: " << result_optimized.iterations << std::endl;
     std::cout << "Найденный минимум: (" << get_x1(result_optimized.optimum)
               << ", " << get_x2(result_optimized.optimum) << ")" << std::endl;
@@ -459,11 +481,8 @@ void run_test(
 }
 
 int main(int argc, const char* argv[]) {
-    std::cout << "Оптимизация методом Хука-Дживса" << std::endl;
-    std::cout << "================================" << std::endl;
-    
     run_test("Rastrigin", rastrigin,
-             make_point(4.5, 4.5),
+             make_point(0.25, 0.25),
              -5.0, 5.0, -5.0, 5.0);
     
     run_test("Rosenbrock", rosenbrock,
