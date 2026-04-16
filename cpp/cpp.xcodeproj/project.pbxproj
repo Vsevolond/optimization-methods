@@ -61,6 +61,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		D3E8C55A2F91286800D2D614 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +79,7 @@
 		D346D08B2F5C32BD00BB64F3 /* lab4-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "lab4-1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D346D0962F5C32E500BB64F3 /* lab4-2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "lab4-2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D346D0A12F5C331300BB64F3 /* lab6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lab6; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3E8C55C2F91286800D2D614 /* lab20 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lab20; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -101,6 +111,11 @@
 		D346D0A22F5C331300BB64F3 /* lab6 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = lab6;
+			sourceTree = "<group>";
+		};
+		D3E8C55D2F91286800D2D614 /* lab20 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = lab20;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -148,6 +163,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3E8C5592F91286800D2D614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -160,6 +182,7 @@
 				D346D08C2F5C32BD00BB64F3 /* lab4-1 */,
 				D346D0972F5C32E500BB64F3 /* lab4-2 */,
 				D346D0A22F5C331300BB64F3 /* lab6 */,
+				D3E8C55D2F91286800D2D614 /* lab20 */,
 				D346D05D2F5C309F00BB64F3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -173,6 +196,7 @@
 				D346D08B2F5C32BD00BB64F3 /* lab4-1 */,
 				D346D0962F5C32E500BB64F3 /* lab4-2 */,
 				D346D0A12F5C331300BB64F3 /* lab6 */,
+				D3E8C55C2F91286800D2D614 /* lab20 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,6 +336,28 @@
 			productReference = D346D0A12F5C331300BB64F3 /* lab6 */;
 			productType = "com.apple.product-type.tool";
 		};
+		D3E8C55B2F91286800D2D614 /* lab20 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3E8C5622F91286800D2D614 /* Build configuration list for PBXNativeTarget "lab20" */;
+			buildPhases = (
+				D3E8C5582F91286800D2D614 /* Sources */,
+				D3E8C5592F91286800D2D614 /* Frameworks */,
+				D3E8C55A2F91286800D2D614 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D3E8C55D2F91286800D2D614 /* lab20 */,
+			);
+			name = lab20;
+			packageProductDependencies = (
+			);
+			productName = lab20;
+			productReference = D3E8C55C2F91286800D2D614 /* lab20 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -319,7 +365,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 2630;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					D346D0692F5C30F100BB64F3 = {
 						CreatedOnToolsVersion = 26.3;
@@ -338,6 +384,9 @@
 					};
 					D346D0A02F5C331300BB64F3 = {
 						CreatedOnToolsVersion = 26.3;
+					};
+					D3E8C55B2F91286800D2D614 = {
+						CreatedOnToolsVersion = 26.4;
 					};
 				};
 			};
@@ -361,6 +410,7 @@
 				D346D08A2F5C32BD00BB64F3 /* lab4-1 */,
 				D346D0952F5C32E500BB64F3 /* lab4-2 */,
 				D346D0A02F5C331300BB64F3 /* lab6 */,
+				D3E8C55B2F91286800D2D614 /* lab20 */,
 			);
 		};
 /* End PBXProject section */
@@ -408,6 +458,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3E8C5582F91286800D2D614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -445,6 +502,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -474,6 +532,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 			};
 			name = Debug;
 		};
@@ -511,6 +570,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -533,6 +593,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 			};
 			name = Release;
 		};
@@ -540,6 +601,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,6 +612,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -560,6 +623,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -570,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -580,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -590,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -600,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -610,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -620,6 +689,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -630,6 +700,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -640,6 +711,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -650,8 +722,33 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = X565S8X224;
 				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D3E8C5602F91286800D2D614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = X565S8X224;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D3E8C5612F91286800D2D614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = X565S8X224;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -718,6 +815,15 @@
 			buildConfigurations = (
 				D346D0A62F5C331300BB64F3 /* Debug */,
 				D346D0A72F5C331300BB64F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3E8C5622F91286800D2D614 /* Build configuration list for PBXNativeTarget "lab20" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E8C5602F91286800D2D614 /* Debug */,
+				D3E8C5612F91286800D2D614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
