@@ -395,7 +395,6 @@ int main() {
 
     cout << fixed << setprecision(6);
 
-    cout << "=== ДИСКРЕТНЫЙ ВАРИАНТ ===\n" << endl;
     cout << left
          << setw(12) << "Объект"
          << right
@@ -429,7 +428,6 @@ int main() {
 
     cout << string(88, '-') << "\n\n";
 
-    cout << "=== НЕПРЕРЫВНЫЙ ВАРИАНТ ===\n" << endl;
     cout << left << setw(8) << "x*"     << "= " << x_star << "\n";
     cout << left << setw(8) << "f1(x*)" << "= " << f1_star << "\n";
     cout << left << setw(8) << "f2(x*)" << "= " << f2_star << "\n";
