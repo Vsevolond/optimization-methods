@@ -16,7 +16,7 @@ using namespace sciplot;
 using namespace numbers;
 
 const int DIM = 3;
-const double LOWER_BOUND = 0.0;
+const double LOWER_BOUND = 0.5;
 const double UPPER_BOUND = 12.0;
 
 struct Cell {
